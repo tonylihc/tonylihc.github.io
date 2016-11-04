@@ -1,0 +1,648 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Web," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="全栈工程师现在是个很热的话题，如何定义全栈工程师？在著名的问答网站Quora上有人提出了这个问题，其中一个获得了高票的回答是：
+
+全栈工程师是指，一个能处理数据库、服务器、系统工程和客户端的所有工作的工程师。根据项目的不同，客户需要的可能是移动栈、Web栈，或者原生应用栈
+
+深以为然，所以，全栈工程师应该分为Web全栈和App全栈。恰巧最近看了本有关Web全栈工程师的书，记录下其中一些观点。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《Web全栈工程师的自我修养》 小结">
+<meta property="og:url" content="http://yoursite.com/2016/06/19/Web-全栈工程师的自我修养/index.html">
+<meta property="og:site_name" content="纯粹的技术和生活记录">
+<meta property="og:description" content="全栈工程师现在是个很热的话题，如何定义全栈工程师？在著名的问答网站Quora上有人提出了这个问题，其中一个获得了高票的回答是：
+
+全栈工程师是指，一个能处理数据库、服务器、系统工程和客户端的所有工作的工程师。根据项目的不同，客户需要的可能是移动栈、Web栈，或者原生应用栈
+
+深以为然，所以，全栈工程师应该分为Web全栈和App全栈。恰巧最近看了本有关Web全栈工程师的书，记录下其中一些观点。">
+<meta property="og:updated_time" content="2016-11-04T01:43:15.265Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《Web全栈工程师的自我修养》 小结">
+<meta name="twitter:description" content="全栈工程师现在是个很热的话题，如何定义全栈工程师？在著名的问答网站Quora上有人提出了这个问题，其中一个获得了高票的回答是：
+
+全栈工程师是指，一个能处理数据库、服务器、系统工程和客户端的所有工作的工程师。根据项目的不同，客户需要的可能是移动栈、Web栈，或者原生应用栈
+
+深以为然，所以，全栈工程师应该分为Web全栈和App全栈。恰巧最近看了本有关Web全栈工程师的书，记录下其中一些观点。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/19/Web-全栈工程师的自我修养/"/>
+
+
+  <title> 《Web全栈工程师的自我修养》 小结 | 纯粹的技术和生活记录 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">纯粹的技术和生活记录</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">1000 words a Day</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+            日程
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                《Web全栈工程师的自我修养》 小结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-19T23:30:16+08:00" content="2016-06-19">
+              2016-06-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>全栈工程师现在是个很热的话题，如何定义全栈工程师？在著名的问答网站Quora上有人提出了这个问题，其中一个获得了高票的回答是：</p>
+<blockquote>
+<p>全栈工程师是指，一个能处理数据库、服务器、系统工程和客户端的所有工作的工程师。根据项目的不同，客户需要的可能是移动栈、Web栈，或者原生应用栈</p>
+</blockquote>
+<p>深以为然，所以，全栈工程师应该分为Web全栈和App全栈。恰巧最近看了本有关Web全栈工程师的书，记录下其中一些观点。<br><a id="more"></a></p>
+<h3 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h3><ul>
+<li>应该从能力和思维方式两方面来判定一个人是否是一个合格的全栈工程师。  </li>
+<li>对于一些经理来说，宁可雇佣多个可管理的普通工程师，也不愿意聘请一个不可管理的天才工程师。</li>
+<li>一个前端工程师可能会不加思考地实现视觉设计稿，因为他的岗位说明里规定了自己的职责，这其中不包括质疑设 计稿，所以他忽略了自己的最终目标：让产品更好。</li>
+<li>全栈工程师除了在一个专精知识领域有深入研究之外，还以知识广博和解决问题能力强著称。</li>
+<li>Done is better than perfect</li>
+<li>老板雇佣一个员工，不是因为他能写程序，而是因为他能帮助自己赚钱。赚钱有两种方法：减少成本和增加收入。</li>
+<li>如果增加一个用户需要的功能是加分项的话，拒绝一个用户不需要的需求更加值得推崇。</li>
+<li>要先看看有哪些问题需要解决，然后再补充您的工具箱。永远从商业目标的角度来决定学习什么，而不是纯粹为了锻炼技术能力去学习。</li>
+<li>如果我开创一个公司需要招聘“全栈工程师”，我要求的三个能力就是一专多长、关注商业目标和关注用户体验。</li>
+<li>绕开每个人都会去做的事情–投简历–转而做一个自己的作品，这就给企业传达了一个信号。</li>
+<li>主动性是全栈工程师必备的一个特质，没有一个全栈工程师是被别人逼出来的。</li>
+<li>每个人都要有意识地维护自己的作品集，它在半年一次的考核、晋升面试甚至以后的跳槽中都非常有用。</li>
+<li>尽量减少同一域下的HTTP请求数，以及尽量减少每一个资源的体积。</li>
+<li>把静态资源放在非主域名下，除了可以增加浏览器并发，还可以减少HTTP请求中携带的不必要的cookie。</li>
+<li>gzip是一种开源的数据压缩算法，其中g代表免费的意思。</li>
+<li>DDoS攻击者喜欢攻击的页面一般是会对数据库进行写操作的页面，这样的页面无法静态化，服务器更容易宕机。</li>
+<li>越接近高级工程师，越考察对某个点的本质理解，以及在项目和团队中的引导作用，而不是对某工具的使用经验。</li>
+<li>框架应该是比库更广泛的概念。一个库是一系列对象、方法等代码，您的应用程序可以把这个库链接进来，起到了重用代码的作用，剩下了重写这部分代码的工作量，而一个框架是一个系统中可重用的一部分。<br>行动重于计划，自己给自己挠痒。</li>
+<li>因为大家害怕失败，所以想把产品调整得完美无缺才发布。但是世界上成功的软件都不是完美的软件，而是在合适的时间发布的、刚刚够用的产品。如果它能活下来，在后面的版本中，他才有机会越来越好。</li>
+<li>让市场认可你的能力，而不是让老板认可，因为老板会变，老板的标准不一致，而市场是一致的。</li>
+<li>semver &amp; npm dependencies rules</li>
+<li>架构是当项目变得复杂之后必须考虑的问题，而项目总是会变得复杂的。</li>
+<li>“任何能用Javascript实现的，最终都必将用Javascript实现。”Atwood定律</li>
+<li>语言只负责描述一个程序，而程序运行的速度，不取决于语言，而是算法和编译器的质量。</li>
+<li>如果您平时没有做重要的事情，就会发现自己常常在做紧急的事情。</li>
+<li>如果平时没有注意锻炼身体，就会常常去医院，花费更多时间</li>
+<li>如果没有培养后辈，为每个项目设置接班人，就会常常需要到处救火。</li>
+<li>如果没有配置好版本管理系统就开始工作，就会浪费更多时间去找回丢失的代码</li>
+<li>如果偷懒硬编码一些变量在代码中，后续会花费更多时间过去调试</li>
+<li>时间四象限：</li>
+<li>拿工作时长来拼，这是体力劳动时代打工者的心态在作祟。</li>
+<li>程序员大致分两种：科学家和工程师。科学家关注技术是否优越，而工程师关注产品是否完美。</li>
+<li>懒惰的终极原因就是你想逃避这件事。</li>
+<li>耐心是一种能力</li>
+<li>用市场最高价格雇佣高效能人士组成团队 Netflix企业文化</li>
+<li>所谓自我提升，首先是接纳自我，而不是贬低自我的性格。</li>
+<li>不要为了迎合主流社会，而伪装成一个外向、热情、合群的人。</li>
+<li>项目的定义是：在一定的约束条件下（时间和资源），具有明确目标的一次性任务。<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3></li>
+<li>做自己感兴趣的事情，学想学的知识，不要怕走偏了，如果有人说不务正业，那就让他们说去吧。如果你能远离传统的路子，将会不同凡响。 –Steve Jobs</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Web/" rel="tag">#Web</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/18/CSS3简介/" rel="next" title="CSS3简介">
+                <i class="fa fa-chevron-left"></i> CSS3简介
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/20/HTTP/" rel="prev" title="HTTP">
+                HTTP <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="TonyLi-hc" />
+          <p class="site-author-name" itemprop="name">TonyLi-hc</p>
+          <p class="site-description motion-element" itemprop="description">学习总结|思考感悟|知识管理</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#笔记"><span class="nav-number">1.</span> <span class="nav-text">笔记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后记"><span class="nav-number">2.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TonyLi-hc</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

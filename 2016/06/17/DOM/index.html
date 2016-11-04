@@ -1,0 +1,613 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript,DOM," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="DOM启蒙小结文档对象模型 (DOM) 是 HTML 和 XML 文档的编程接口。它给文档（结构树）提供了一个结构化的表述并且定义了一种方式—程序可以对结构树进行访问，以改变文档的结构，样式和内容。 DOM 提供了一种表述形式— 将文档作为一个结构化的节点组以及包含属性和方法的对象。从本质上说，它将 web 页面和脚本或编程语言连接起来了。参考链接 DOM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DOM小结">
+<meta property="og:url" content="http://yoursite.com/2016/06/17/DOM/index.html">
+<meta property="og:site_name" content="纯粹的技术和生活记录">
+<meta property="og:description" content="DOM启蒙小结文档对象模型 (DOM) 是 HTML 和 XML 文档的编程接口。它给文档（结构树）提供了一个结构化的表述并且定义了一种方式—程序可以对结构树进行访问，以改变文档的结构，样式和内容。 DOM 提供了一种表述形式— 将文档作为一个结构化的节点组以及包含属性和方法的对象。从本质上说，它将 web 页面和脚本或编程语言连接起来了。参考链接 DOM">
+<meta property="og:image" content="http://yoursite.com/sicp.jpg">
+<meta property="og:updated_time" content="2016-06-19T15:24:01.664Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DOM小结">
+<meta name="twitter:description" content="DOM启蒙小结文档对象模型 (DOM) 是 HTML 和 XML 文档的编程接口。它给文档（结构树）提供了一个结构化的表述并且定义了一种方式—程序可以对结构树进行访问，以改变文档的结构，样式和内容。 DOM 提供了一种表述形式— 将文档作为一个结构化的节点组以及包含属性和方法的对象。从本质上说，它将 web 页面和脚本或编程语言连接起来了。参考链接 DOM">
+<meta name="twitter:image" content="http://yoursite.com/sicp.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/17/DOM/"/>
+
+
+  <title> DOM小结 | 纯粹的技术和生活记录 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">纯粹的技术和生活记录</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">1000 words a Day</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+            日程
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                DOM小结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-17T20:31:37+08:00" content="2016-06-17">
+              2016-06-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="DOM启蒙小结"><a href="#DOM启蒙小结" class="headerlink" title="DOM启蒙小结"></a>DOM启蒙小结</h2><p>文档对象模型 (DOM) 是 HTML 和 XML 文档的编程接口。它给文档（结构树）提供了一个结构化的表述并且定义了一种方式—程序可以对结构树进行访问，以改变文档的结构，样式和内容。 DOM 提供了一种表述形式— 将文档作为一个结构化的节点组以及包含属性和方法的对象。从本质上说，它将 web 页面和脚本或编程语言连接起来了。参考链接 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document_Object_Model" target="_blank" rel="external">DOM</a><br><a id="more"></a><br>1、DOM (Document Object Model)：是一个由<code>JavaScript</code>节点对象组成的层次结构 / 树<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;HTML&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;!-- 此处加入你的内容 --&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>DOM 的目的是使用<code>JavaScript</code>操作（删除、添加、替换、创建事件及修改）。</p>
+<p> 节点 DOCUMENT_NODE(如 window.document)、ELEMNET_NODE (如<body>)、ATTRIBUTE_NODE(如class=”funEdges”)、TEXT_NODE<br>节点属性 <code>childNodes</code> <code>firstChild</code> <code>lastChild</code> <code>nextSibling</code> <code>nodeName</code> <code>nodeType</code> <code>nodeValue</code> <code>parentNode</code> <code>previousSibling</code><br>节点方法 <code>appendChild()</code> <code>cloneNode()</code> <code>compareDocumentPosition()</code> <code>contains()</code> <code>hasChildNodes()</code> <code>insertBefore()</code> <code>isEqualNode()</code> <code>removeChild()</code>  <code>replaceChild()</code><br>文档方法 <code>document.createElement()</code> <code>document.createTextNode()</code><br>元素属性 <code>innerHTML</code> <code>outerHTML</code> <code>textContent</code> <code>innerText</code> <code>outText</code> <code>firstElementChild</code> <code>lastElementChild</code> <code>nextElementChild</code> <code>previousElementChild</code> <code>children</code><br>元素方法 <code>insertAdjacentHTML</code></body></p>
+<p>2、<code>document.implementation.hasFeature()</code> 探测特性 document.activeElement / hasFocus() 激活节点<br>isSupported() 方法也可以确定节点的实现程度信息<br>获取当前激活的引用 <code>document.activeElement</code> 相关方法 <code>hasFocus()</code><br>全局对象: <code>document.defaultView</code>  </p>
+<p>3、 获取元素标签名 <code>docuemnt.querySelector(&#39;a&#39;).tagName</code>、<code>docuemnt.querySelector(&#39;a&#39;).nodeName</code><br>元素属性方法 <code>getAttribute()</code>、<code>setAttribute()</code>、<code>hasAttribute()</code>、<code>removeAttribute()</code>、  <code>hasAttribute()</code><br>类属性值列表 <code>classList</code> <code>className</code><br>类属性方法 <code>add()</code>、<code>remove()</code>、<code>toggle()</code>、<code>contains()</code></p>
+<p>4、选取特定元素节点 <code>querySelector()</code>  <code>getElementById()</code><br>　选取元素节点列表 <code>querySelectorAll()</code>  <code>getElementByTagName()</code>   <code>getElementByClassName()</code><br>　选择直属子元素 <code>children</code><br>5、 <code>offsetTop</code>  元素上部到祖先上部的距离<br><code>offsetLeft</code>   元素左侧边框最外缘到祖先左侧边框最外缘的距离<br><code>offsetParent</code> 的值判定依据为查找离该元素最近的CSS定位值不为static的祖先元素。<br><code>scrollHeight</code> <code>scrollWidth</code> 获取滚动元素的尺寸<br><code>scrollTop</code> <code>scrollLeft</code> 获取并设置从上、左边滚动的距离<br><code>scrollIntoView()</code> 滚动元素到视区<br>6、<code>getAttribute()</code> 获取内联CSS属性 <code>setAttribute()</code> 设置内联CSS属性<br> <code>classList.add()</code>  应用样式  <code>removeAttribute()</code> 移除样式<br><code>getComputedStyle()</code> 获取元素的已计算样式<br>7、<code>createTextNode()</code> 创建文本节点 <code>nodeValue()</code> 获取文本节点值<br><code>appendData()</code> <code>deleteData()</code> <code>insertData()</code> <code>replaceData()</code> <code>subStringData()</code> 操作文本节点<br><code>normalize()</code> 合并兄弟节点 <code>splitText()</code>分割文本节点</p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p><strong>界面事件</strong><br><code>load</code>   *加载完成时触发  <code>unload</code> (与前者相对)<br><code>abort</code> 资源加载被终止 <code>error</code> 资源加载失败 <code>resize</code> 视区大小调整 <code>scroll</code> 滚动文档或者元素<br><code>contextmenu</code> 右键被点击</p>
+<p><strong>聚焦事件</strong><br><code>blur</code> 失去焦点 <code>focus</code>获得焦点 <code>focusin</code> 即将取得焦点触发 <code>focusout</code> 即将失去焦点  </p>
+<p><strong>表单事件</strong><br><code>change</code> 修改值时 <code>reset</code> 重置 <code>submit</code> 提交 <code>select</code> 选取文本输入框的内容时触发  </p>
+<p><strong>鼠标事件</strong><br><code>click</code> 点击 <code>dbclick</code> 点击两次 <code>mousedown</code> 鼠标按下 <code>mouseenter</code> 鼠标移入<br><code>mouseleave</code> 鼠标移出(不冒泡)<br><code>mousemove</code> 鼠标移动 <code>mouseout</code> 鼠标移出(冒泡) <code>mouseup</code> 鼠标松开<br> <code>mouseover</code> 鼠标移动到元素上面 </p>
+<p><strong>滚轮事件</strong><br>`wheel(mousewheel)``</p>
+<p><strong>键盘事件</strong><br><code>keydown</code> 按键按下(不产生字符码) <code>keypress</code> 按键按下(能产生字符码) <code>keyup</code> 按键松开</p>
+<p><strong>触控事件</strong><br><code>touchstart</code> <code>touchend</code> <code>touchmove</code> <code>touchenter</code> <code>touchleave</code> <code>touchcancel</code> </p>
+<p><strong>文档相关事件</strong><br><code>readystatechange</code> readyState改变时触发</p>
+<p><strong>拖拽事件</strong><br><code>drag</code>  <code>dragstart</code> <code>dragend</code> <code>dragenter</code> <code>dragleave</code> <code>dragover</code> <code>drop</code></p>
+<h3 id="一些-method"><a href="#一些-method" class="headerlink" title="一些 method"></a>一些 method</h3><p><code>addEventListener(&#39;事件类型&#39;,callback 回调函数,false 捕捉阶段还是冒泡阶段)</code><br><code>removeEventListener()</code> 移除事件委托 <code>preventDefault()</code> 阻止元素的默认行为<br> <code>stopPropagation()</code> 终止事件冒泡</p>
+<h3 id="some-words"><a href="#some-words" class="headerlink" title="some words"></a>some words</h3><p>把一些 DOM 相关的东西列了出来，自己平时无聊可以找来看看，当练习吧！  继续 ， 就是干！ </p>
+<p><img src="sicp.jpg"></p>
+<p>突然想放一下这图，没有为什么！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+            <a href="/tags/DOM/" rel="tag">#DOM</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/16/markdown/" rel="next" title="markdown语法">
+                <i class="fa fa-chevron-left"></i> markdown语法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/18/CSS3简介/" rel="prev" title="CSS3简介">
+                CSS3简介 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="TonyLi-hc" />
+          <p class="site-author-name" itemprop="name">TonyLi-hc</p>
+          <p class="site-description motion-element" itemprop="description">学习总结|思考感悟|知识管理</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM启蒙小结"><span class="nav-number">1.</span> <span class="nav-text">DOM启蒙小结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#事件"><span class="nav-number">1.1.</span> <span class="nav-text">事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些-method"><span class="nav-number">1.2.</span> <span class="nav-text">一些 method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some-words"><span class="nav-number">1.3.</span> <span class="nav-text">some words</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TonyLi-hc</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
