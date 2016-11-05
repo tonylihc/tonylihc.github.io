@@ -1,0 +1,722 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Javascript DesignPattern constructor" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+
+<meta name="description" content="Constructordescription
+构造函数用于创建特定类型的对象——不仅声明了使用的对象，构造函数还可以接受参数以便第一次创建对象的时候设置对象的成员值。你可以自定义自己的构造函数，然后在里面声明自定义类型对象的属性或方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DesignPattern-构造函数模式">
+<meta property="og:url" content="http://yoursite.com/2016/11/05/DesignPattern-构造函数模式/index.html">
+<meta property="og:site_name" content="纯粹的技术和生活记录">
+<meta property="og:description" content="Constructordescription
+构造函数用于创建特定类型的对象——不仅声明了使用的对象，构造函数还可以接受参数以便第一次创建对象的时候设置对象的成员值。你可以自定义自己的构造函数，然后在里面声明自定义类型对象的属性或方法">
+<meta property="og:updated_time" content="2016-11-05T09:26:45.092Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DesignPattern-构造函数模式">
+<meta name="twitter:description" content="Constructordescription
+构造函数用于创建特定类型的对象——不仅声明了使用的对象，构造函数还可以接受参数以便第一次创建对象的时候设置对象的成员值。你可以自定义自己的构造函数，然后在里面声明自定义类型对象的属性或方法">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/11/05/DesignPattern-构造函数模式/"/>
+
+
+  <title> DesignPattern-构造函数模式 | 纯粹的技术和生活记录 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">纯粹的技术和生活记录</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">1000 words a Day</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                DesignPattern-构造函数模式
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-05T10:44:51+08:00" content="2016-11-05">
+              2016-11-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/05/DesignPattern-构造函数模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/05/DesignPattern-构造函数模式/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Constructor"><a href="#Constructor" class="headerlink" title="Constructor"></a>Constructor</h3><h4 id="description"><a href="#description" class="headerlink" title="description"></a>description</h4><blockquote>
+<p>构造函数用于创建特定类型的对象——不仅声明了使用的对象，构造函数还可以接受参数以便第一次创建对象的时候设置对象的成员值。你可以自定义自己的构造函数，然后在里面声明自定义类型对象的属性或方法</p>
+</blockquote>
+<a id="more"></a>
+<h4 id="The-basic-usage"><a href="#The-basic-usage" class="headerlink" title="The basic usage"></a>The basic usage</h4><blockquote>
+<p>在JavaScript里，构造函数通常是认为用来实现实例的，JavaScript没有类的概念，但是有特殊的构造函数。通过<code>new</code>关键字来调用定义的否早函数，你可以告诉JavaScript你要<code>创建一个新对象</code>并且新对象的成员声明都是<code>构造函数</code>里定义的。在构造函数内部，<code>this</code>关键字引用的是新创建的对象。基本用法如下：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params">model, year, miles</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.model = model; <span class="comment">// 这里 this --&gt; 当前的被调用的上下文!</span></div><div class="line">    <span class="keyword">this</span>.year = year;</div><div class="line">    <span class="keyword">this</span>.miles = miles;</div><div class="line">    <span class="keyword">this</span>.output= <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.model + <span class="string">"走了"</span> + <span class="keyword">this</span>.miles + <span class="string">"公里"</span>;</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> tom= <span class="keyword">new</span> Car(<span class="string">"大叔"</span>, <span class="number">2014</span>, <span class="number">20000</span>);</div><div class="line"><span class="keyword">var</span> dudu= <span class="keyword">new</span> Car(<span class="string">"Dudu"</span>, <span class="number">2016</span>, <span class="number">5000</span>);</div><div class="line"><span class="built_in">console</span>.log(tom.output());</div><div class="line"><span class="built_in">console</span>.log(dudu.output());</div></pre></td></tr></table></figure>
+<p>上面的例子是个非常简单的构造函数模式，但是有点小问题。首先是使用继承很麻烦了，其次<code>output()</code>在每次创建对象的时候都重新定义了，最好的方法是让所有Car类型的实例都共享这个output()方法，这样如果有大批量的实例的话，就会节约很多内存。<br>解决这个问题，我们可以使用如下方式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params">model, year, miles</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.model = model;</div><div class="line">    <span class="keyword">this</span>.year = year;</div><div class="line">    <span class="keyword">this</span>.miles = miles;</div><div class="line">    <span class="keyword">this</span>.output= formatCar;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatCar</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.model + <span class="string">"走了"</span> + <span class="keyword">this</span>.miles + <span class="string">"公里"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这个方式虽然可用，但是总觉得很别扭。</p>
+<h4 id="构造函数与prototype"><a href="#构造函数与prototype" class="headerlink" title="构造函数与prototype"></a>构造函数与prototype</h4><blockquote>
+<p>JavaScript里函数有个原型属性叫<code>prototype</code>，当调用构造函数创建对象的时候，所有该构造函数原型的属性在新创建对象上都可用。按照这样，多个Car对象实例可以共享同一个原型，我们再扩展一下上例的代码：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params">model, year, miles</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.model = model;</div><div class="line">    <span class="keyword">this</span>.year = year;</div><div class="line">    <span class="keyword">this</span>.miles = miles;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*</span></div><div class="line">注意：这里我们使用了Object.prototype.方法名，而不是`Object.prototype`主要是用来避免重写定义原型prototype对象</div><div class="line">*/</div><div class="line">Car.prototype.output= <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  <span class="comment">// 原型上共享 output 方法</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.model + <span class="string">"走了"</span> + <span class="keyword">this</span>.miles + <span class="string">"公里"</span>;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> Car(<span class="string">"大叔"</span>, <span class="number">2014</span>, <span class="number">20000</span>);</div><div class="line"><span class="keyword">var</span> dudu = <span class="keyword">new</span> Car(<span class="string">"Dudu"</span>, <span class="number">2016</span>, <span class="number">5000</span>);</div><div class="line"><span class="built_in">console</span>.log(tom.output());</div><div class="line"><span class="built_in">console</span>.log(dudu.output());</div></pre></td></tr></table></figure>
+<p>这里，<code>output()</code>单实例可以在所有Car对象实例里共享使用。<br>另外：我们推荐构造函数以大写字母开头，以便区分普通的函数。</p>
+<h3 id="只能用new吗？"><a href="#只能用new吗？" class="headerlink" title="只能用new吗？"></a>只能用new吗？</h3><blockquote>
+<p>上面的例子对函数car都是用new来创建对象的，只有这一种方式么？其实还有别的方式，这里列举两种：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params">model, year, miles</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.model = model;</div><div class="line">    <span class="keyword">this</span>.year = year;</div><div class="line">    <span class="keyword">this</span>.miles = miles;</div><div class="line">    <span class="keyword">this</span>.output = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.model + <span class="string">"走了"</span> + <span class="keyword">this</span>.miles + <span class="string">"公里"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//方法1：作为函数调用</span></div><div class="line">Car(<span class="string">"大叔"</span>, <span class="number">2009</span>, <span class="number">20000</span>);  <span class="comment">//this指向为window， 所以添加到 window 对象上</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.output()); <span class="comment">// 正常调用</span></div><div class="line"><span class="comment">//方法2：在另外一个对象的作用域内调用</span></div><div class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">Car.call(o, <span class="string">"Dudu"</span>, <span class="number">2016</span>, <span class="number">5000</span>);</div><div class="line"><span class="built_in">console</span>.log(o.output());</div></pre></td></tr></table></figure>
+<p>而如果使用new关键字则没有这个问题，验证如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用new 关键字</span></div><div class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> Car(<span class="string">"大叔"</span>, <span class="number">2014</span>, <span class="number">20000</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> tom); <span class="comment">// "object"</span></div><div class="line"><span class="built_in">console</span>.log(tom.output()); <span class="comment">// "大叔走了20000公里"</span></div></pre></td></tr></table></figure></p>
+<h3 id="强制使用new"><a href="#强制使用new" class="headerlink" title="强制使用new"></a>强制使用new</h3><blockquote>
+<p>上述的例子展示了不使用<code>new</code>的问题，那么我们有没有办法让构造函数强制使用new关键字呢，答案是肯定的，上代码：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params">model, year, miles</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (!(<span class="keyword">this</span> <span class="keyword">instanceof</span> Car)) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Car(model, year, miles);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.model = model;</div><div class="line">    <span class="keyword">this</span>.year = year;</div><div class="line">    <span class="keyword">this</span>.miles = miles;</div><div class="line">    <span class="keyword">this</span>.output = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.model + <span class="string">"走了"</span> + <span class="keyword">this</span>.miles + <span class="string">"公里"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> Car(<span class="string">"大叔"</span>, <span class="number">2009</span>, <span class="number">20000</span>);</div><div class="line"><span class="keyword">var</span> dudu = Car(<span class="string">"Dudu"</span>, <span class="number">2010</span>, <span class="number">5000</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> tom); <span class="comment">// "object"</span></div><div class="line"><span class="built_in">console</span>.log(tom.output()); <span class="comment">// "大叔走了20000公里"</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> dudu); <span class="comment">// "object"</span></div><div class="line"><span class="built_in">console</span>.log(dudu.output()); <span class="comment">// "Dudu走了5000公里"</span></div></pre></td></tr></table></figure>
+<p>通过判断 <code>this</code> 的 <code>instanceof</code> 是不是Car来决定返回new Car还是继续执行代码，如果使用的是new关键字，则(this instanceof Car)为真，会继续执行下面的参数赋值，如果没有用new，(this instanceof Car)就为假，就会重新new一个实例返回。</p>
+<h3 id="原始包装函数"><a href="#原始包装函数" class="headerlink" title="原始包装函数"></a>原始包装函数</h3><blockquote>
+<p>JavaScript里有3中原始包装函数：number, string, boolean，有时候两种都用：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 使用原始包装函数</span></div><div class="line"><span class="keyword">var</span> s = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"my string"</span>);</div><div class="line"><span class="keyword">var</span> n = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">101</span>);</div><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">true</span>);</div><div class="line"><span class="comment">// 推荐这种</span></div><div class="line"><span class="keyword">var</span> s = <span class="string">"my string"</span>;</div><div class="line"><span class="keyword">var</span> n = <span class="number">101</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="literal">true</span>;</div></pre></td></tr></table></figure>
+<p>推荐，只有在想保留数值状态的时候使用这些包装函数，关于区别可以参考下面的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 原始string</span></div><div class="line"><span class="keyword">var</span> greet = <span class="string">"Hello there"</span>;</div><div class="line"><span class="comment">// 使用split()方法分割</span></div><div class="line">greet.split(<span class="string">' '</span>)[<span class="number">0</span>]; <span class="comment">// "Hello"</span></div><div class="line"><span class="comment">// 给原始类型添加新属性不会报错</span></div><div class="line">greet.smile = <span class="literal">true</span>;</div><div class="line"><span class="comment">// 没法获取这个值</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> greet.smile); <span class="comment">// "undefined"</span></div><div class="line"></div><div class="line"><span class="comment">// 原始string</span></div><div class="line"><span class="keyword">var</span> greet = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"Hello there"</span>);</div><div class="line"><span class="comment">// 使用split()方法分割</span></div><div class="line">greet.split(<span class="string">' '</span>)[<span class="number">0</span>]; <span class="comment">// "Hello"</span></div><div class="line"><span class="comment">// 给包装函数类型添加新属性不会报错</span></div><div class="line">greet.smile = <span class="literal">true</span>;</div><div class="line"><span class="comment">// 可以正常访问新属性</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> greet.smile); <span class="comment">// "boolean"</span></div></pre></td></tr></table></figure></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
+<p>本章主要讲解了<code>构造函数模式</code>的使用方法、调用方法以及<code>new</code>关键字的区别，希望在使用的时候有所注意。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/04/IE兼容getElementsByClassName解决方法/" rel="next" title="IE兼容getElementsByClassName解决方法">
+                <i class="fa fa-chevron-left"></i> IE兼容getElementsByClassName解决方法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/05/Javascript-作用域链/" rel="prev" title="Javascript 作用域链">
+                Javascript 作用域链 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/05/DesignPattern-构造函数模式/"
+           data-title="DesignPattern-构造函数模式" data-url="http://yoursite.com/2016/11/05/DesignPattern-构造函数模式/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="TonyLi-hc" />
+          <p class="site-author-name" itemprop="name">TonyLi-hc</p>
+          <p class="site-description motion-element" itemprop="description">学习总结|思考感悟|知识管理</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tonylihc" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/TonyLi-hc" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://facebook.github.io/react/docs/hello-world.html" title="React" target="_blank">React</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://react-china.org/" title="react-china" target="_blank">react-china</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://ant.design/docs/spec/introduce" title="antd" target="_blank">antd</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/wordpress/" title="zhangxinxu" target="_blank">zhangxinxu</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zcfy.cc/" title="zcfy" target="_blank">zcfy</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ruanyifeng.com/blog/" title="ruanyifeng" target="_blank">ruanyifeng</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Constructor"><span class="nav-number">1.</span> <span class="nav-text">Constructor</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#description"><span class="nav-number">1.1.</span> <span class="nav-text">description</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-basic-usage"><span class="nav-number">1.2.</span> <span class="nav-text">The basic usage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数与prototype"><span class="nav-number">1.3.</span> <span class="nav-text">构造函数与prototype</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只能用new吗？"><span class="nav-number">2.</span> <span class="nav-text">只能用new吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强制使用new"><span class="nav-number">3.</span> <span class="nav-text">强制使用new</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原始包装函数"><span class="nav-number">4.</span> <span class="nav-text">原始包装函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TonyLi-hc</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"TonyLi-hc"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/js/src/particle.js"></script>
+</body>
+
+</html>

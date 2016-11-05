@@ -86,6 +86,7 @@
 
 
 <meta name="description" content="迷之 this
+
 this 的最终指向的是那个调用它的对象
 如果一个函数中包含多个对象，尽管这个函数是被最外层的对象所调用，this 指向的也只是它上一级的对象">
 <meta property="og:type" content="article">
@@ -93,12 +94,14 @@ this 的最终指向的是那个调用它的对象
 <meta property="og:url" content="http://yoursite.com/2016/11/04/Javascript-this/index.html">
 <meta property="og:site_name" content="纯粹的技术和生活记录">
 <meta property="og:description" content="迷之 this
+
 this 的最终指向的是那个调用它的对象
 如果一个函数中包含多个对象，尽管这个函数是被最外层的对象所调用，this 指向的也只是它上一级的对象">
-<meta property="og:updated_time" content="2016-11-04T12:40:01.945Z">
+<meta property="og:updated_time" content="2016-11-05T09:27:40.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript this">
 <meta name="twitter:description" content="迷之 this
+
 this 的最终指向的是那个调用它的对象
 如果一个函数中包含多个对象，尽管这个函数是被最外层的对象所调用，this 指向的也只是它上一级的对象">
 
@@ -320,11 +323,13 @@ this 的最终指向的是那个调用它的对象
       
 
       
-        <h3 id="迷之-this"><a href="#迷之-this" class="headerlink" title="迷之 this"></a>迷之 <code>this</code></h3><ol>
+        <h3 id="迷之-this"><a href="#迷之-this" class="headerlink" title="迷之 this"></a>迷之 <code>this</code></h3><blockquote>
+<ol>
 <li><code>this</code> 的最终指向的是那个调用它的对象</li>
-<li>如果一个函数中包含多个对象，尽管这个函数是被最外层的对象所调用，<code>this</code> 指向的也只是它上一级的对象<a id="more"></a>
-</li>
+<li>如果一个函数中包含多个对象，尽管这个函数是被最外层的对象所调用，<code>this</code> 指向的也只是它上一级的对象</li>
 </ol>
+</blockquote>
+<a id="more"></a>
 <p>以下通过一些demo来说明以下 <code>this</code></p>
 <h4 id="window中的this"><a href="#window中的this" class="headerlink" title="window中的this"></a>window中的this</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.x = <span class="number">1</span>;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.x);</div><div class="line">&#125;</div><div class="line">test1(); <span class="comment">//1</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> y = <span class="number">2</span>;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.y); <span class="comment">//undefined</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// Window</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>上面的两个例子中，都是属于属于全局性调用，因此this就代表全局对象。也就是为什么test2打印出来的<code>this</code>.y会是<code>undefined</code>，因为this指向了 <code>window</code>.</p>
@@ -484,7 +489,7 @@ this 的最终指向的是那个调用它的对象
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -501,7 +506,7 @@ this 的最终指向的是那个调用它的对象
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -561,6 +566,14 @@ this 的最终指向的是那个调用它的对象
               
                 <li class="links-of-blogroll-item">
                   <a href="http://www.zhangxinxu.com/wordpress/" title="zhangxinxu" target="_blank">zhangxinxu</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zcfy.cc/" title="zcfy" target="_blank">zcfy</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ruanyifeng.com/blog/" title="ruanyifeng" target="_blank">ruanyifeng</a>
                 </li>
               
             </ul>
