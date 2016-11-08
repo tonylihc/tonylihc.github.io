@@ -1,0 +1,724 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS rem" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+
+<meta name="description" content="如何让页面适配各种机型大杀器rem我们可以知道，页面主体中规中矩，分为两部分：上半部分是介绍页面，下半部分是主体界面，有一个点击按钮来负责全部用户交互，为了适配iphone4到6plus以及众多安卓，我们对整个页面的架构可以有如下几种方案：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何让页面适配各种机型">
+<meta property="og:url" content="http://yoursite.com/2016/11/08/如何让页面适配各种机型/index.html">
+<meta property="og:site_name" content="纯粹的技术和生活记录">
+<meta property="og:description" content="如何让页面适配各种机型大杀器rem我们可以知道，页面主体中规中矩，分为两部分：上半部分是介绍页面，下半部分是主体界面，有一个点击按钮来负责全部用户交互，为了适配iphone4到6plus以及众多安卓，我们对整个页面的架构可以有如下几种方案：">
+<meta property="og:updated_time" content="2016-11-08T14:54:17.654Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何让页面适配各种机型">
+<meta name="twitter:description" content="如何让页面适配各种机型大杀器rem我们可以知道，页面主体中规中矩，分为两部分：上半部分是介绍页面，下半部分是主体界面，有一个点击按钮来负责全部用户交互，为了适配iphone4到6plus以及众多安卓，我们对整个页面的架构可以有如下几种方案：">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/11/08/如何让页面适配各种机型/"/>
+
+
+  <title> 如何让页面适配各种机型 | 纯粹的技术和生活记录 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">纯粹的技术和生活记录</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">1000 words a Day</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                如何让页面适配各种机型
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-08T22:42:20+08:00" content="2016-11-08">
+              2016-11-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/08/如何让页面适配各种机型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/08/如何让页面适配各种机型/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="如何让页面适配各种机型"><a href="#如何让页面适配各种机型" class="headerlink" title="如何让页面适配各种机型"></a>如何让页面适配各种机型</h3><h4 id="大杀器rem"><a href="#大杀器rem" class="headerlink" title="大杀器rem"></a>大杀器rem</h4><p>我们可以知道，页面主体中规中矩，分为两部分：上半部分是介绍页面，下半部分是主体界面，有一个点击按钮来负责全部用户交互，为了适配iphone4到6plus以及众多安卓，我们对整个页面的架构可以有如下几种方案：</p>
+<a id="more"></a>
+<ul>
+<li>高度百分比 &gt;</li>
+</ul>
+<p>高度百分比方案——整个屏幕的主要高度宽度都用百分比定位，比如介绍部分占高度的百分之30，点击抢红包部分占剩下的百分之70。</p>
+<blockquote>
+<p>优点——易于理解好上手<br>缺点——由于行内样式，行间样式和它们的父子元素具有复杂的宽高关系，因此内部，比如介绍部分的内部的诸多元素想必还要用到px，em等定位方式，因此不那么和谐和有保障，容易小屏溢出或者大屏留白。在这个页面表现为倒计时文字部分和帮谁谁谁砍价的部分难以控制。</p>
+</blockquote>
+<ul>
+<li>flex按列布局</li>
+</ul>
+<p>flex布局是一个很不错的方式：对于这个页面，我们可以有如下构想：对于介绍部分，用px或者em定位和布局，而对于剩下的部分则用flex让他填充好下边的空间，再用绝对定位让砍价按钮水平垂直都居中，简直丝滑。</p>
+<blockquote>
+<p>优点——丝滑。<br>缺点——要硬说有什么缺点的话，那么下端宽度不好控制算一个吧，试想这样构建出来的页面可能会在iphone4中下端一个按钮几乎占满，而在6普拉斯中则会有大量留白。</p>
+</blockquote>
+<ul>
+<li>大杀器rem</li>
+</ul>
+<p>我们知道在rem出来之前，em有着定位根为父元素的天然缺陷，比如在这样的页面中。<br><code>html&gt;body&gt;div.parent&gt;div.son</code><br>有这样的css:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.html&#123;</div><div class="line">    font-size:10px;</div><div class="line">    .parent&#123;</div><div class="line">        font-size:2em;</div><div class="line">        .son&#123;</div><div class="line">            font-size:1em;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后你猜son的字体是多少px？是20，没错。因为他的参照元素是.parent元素，而不是根，这样的话嵌套多了谁敢用em。</p>
+<p>幸好rem的横空出现解决了这种问题：rem的参照物就是根元素的 <code>font-size</code>，这让我们对于不同的页面有了设置全局标准的可能，大屏幕，我可以设置大的字体单位，小屏幕设置小的。一举解决了百分比定位和flex布局的遗留问题。</p>
+<p>怎样确定字体单位呢？有两种方法，第一种比较优雅：媒体查询，我们可以用媒体查询看看浏览设备的宽高，然后设置一个合适的字体单位，另一种方法比较精确，那就是用js去算。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">body宽度document.body.clientWidth</div><div class="line">body高度document.body.clientHeight</div><div class="line">document.documentElement.clientWidth ==&gt; 可见区域宽度</div><div class="line">document.documentElement.clientHeight ==&gt; 可见区域高度</div></pre></td></tr></table></figure>
+<p>计算方法是这样的，对于这个页面来说:</p>
+<blockquote>
+<p>假设：设计稿高度1500px，设计稿中介绍部分高度300px，倒计时字体大小40px，屏幕高度1000px。<br>第一步：计算单位：html的font-size = 屏幕高度 / 100 –&gt;10px;<br>第二步：介绍部分设置成高度30rem。<br>第三步：字体大小设置成4rem。</p>
+</blockquote>
+<p>啊哈，发现他的优点了嘛，没错，全局等比放大的适应。这就意味着，你在6plus里面能看的页面，在iphone4里面同样能看，而且不会因为屏幕小而发生元素交叠的情况，也不会因为屏幕大而出现留白的情况，是我目前最喜欢的一种表达方式。</p>
+<blockquote>
+<p>优点：做到了完美适配。<br>缺点：只是等比放大，小屏下字体小，大屏下字体大（不过从经验来讲，字体的大小并不明显，因为屏幕在那呢，看着也舒服）。<br>缺点反驳：我觉得只有一套设计稿，大小屏幕都兼顾完美是不可能的，因为你不知道什么时候该让一个字占用绝对20像素还是绝对是屏幕宽度的百分之五。如果要做到兼顾，也是可以的：用多套设计稿+css媒体查询为不同宽度的页面写好不同的css样式。</p>
+</blockquote>
+<p>对于多屏页面。</p>
+<ol>
+<li>在reset.css页面加入媒体查询来根据不同的宽度定好字体单位。</li>
+<li>大杀器rem<br>使用方法同上，不过上面是根据高度来确定字体单位，这里可以用宽度来确定字体单位。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var html = document.getElementsByTagName(&quot;html&quot;);</div><div class="line">html[0].style.fontSize = document.documentElement.clientWidth/10+&quot;px&quot;;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.body.clientWidth ==&gt; BODY对象宽度</div><div class="line"><span class="built_in">document</span>.body.clientHeight ==&gt; BODY对象高度</div><div class="line"><span class="built_in">document</span>.documentElement.clientWidth ==&gt; 可见区域宽度</div><div class="line"><span class="built_in">document</span>.documentElement.clientHeight ==&gt; 可见区域高度</div><div class="line">网页可见区域宽： <span class="built_in">document</span>.body.clientWidth</div><div class="line">网页可见区域高： <span class="built_in">document</span>.body.clientHeight</div><div class="line">网页可见区域宽： <span class="built_in">document</span>.body.offsetWidth (包括边线的宽)</div><div class="line">网页可见区域高： <span class="built_in">document</span>.body.offsetHeight (包括边线的高)</div><div class="line">网页正文全文宽： <span class="built_in">document</span>.body.scrollWidth</div><div class="line">网页正文全文高： <span class="built_in">document</span>.body.scrollHeight</div><div class="line">网页被卷去的高： <span class="built_in">document</span>.body.scrollTop</div><div class="line">网页被卷去的左： <span class="built_in">document</span>.body.scrollLeft</div><div class="line">网页正文部分上： <span class="built_in">window</span>.screenTop</div><div class="line">网页正文部分左： <span class="built_in">window</span>.screenLeft</div><div class="line">屏幕分辨率的高： <span class="built_in">window</span>.screen.height</div><div class="line">屏幕分辨率的宽： <span class="built_in">window</span>.screen.width</div><div class="line">屏幕可用工作区高度： <span class="built_in">window</span>.screen.availHeight</div><div class="line">屏幕可用工作区宽度： <span class="built_in">window</span>.screen.availWidth</div><div class="line"><span class="comment">// 部分jQuery函数</span></div><div class="line">$(<span class="built_in">window</span>).height() 　<span class="comment">//浏览器时下窗口可视区域高度 </span></div><div class="line">$(<span class="built_in">document</span>).height()　　　　<span class="comment">//浏览器时下窗口文档的高度 </span></div><div class="line">$(<span class="built_in">document</span>.body).height()　　　　　　<span class="comment">//浏览器时下窗口文档body的高度 </span></div><div class="line">$(<span class="built_in">document</span>.body).outerHeight(<span class="literal">true</span>)　<span class="comment">//浏览器时下窗口文档body的总高度 包括         border padding margin </span></div><div class="line">$(<span class="built_in">window</span>).width() 　<span class="comment">//浏览器时下窗口可视区域宽度 </span></div><div class="line">$(<span class="built_in">document</span>).width()<span class="comment">//浏览器时下窗口文档对于象宽度 </span></div><div class="line">$(<span class="built_in">document</span>.body).width()　　　　　　<span class="comment">//浏览器时下窗口文档body的高度 </span></div><div class="line">$(<span class="built_in">document</span>.body).outerWidth(<span class="literal">true</span>)　<span class="comment">//浏览器时下窗口文档body的总宽度 包括    border padding</span></div><div class="line">HTML精确定位:scrollLeft,scrollWidth,clientWidth,offsetWidth </div><div class="line">scrollHeight: 获取对象的滚动高度。 </div><div class="line">scrollLeft:设置或获取位于对象左边界和窗口中目前可见内容的最左端之间的距离 </div><div class="line">scrollTop:设置或获取位于对象最顶端和窗口中可见内容的最顶端之间的距离 </div><div class="line">scrollWidth:获取对象的滚动宽度 </div><div class="line">offsetHeight:获取对象相对于版面或由父坐标 offsetParent 属性指定的父坐标的高度 </div><div class="line">offsetLeft:获取对象相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置 </div><div class="line">offsetTop:获取对象相对于版面或由 offsetTop 属性指定的父坐标的计算顶端位置 </div><div class="line">event.clientX 相对文档的水平座标 </div><div class="line">event.clientY 相对文档的垂直座标 </div><div class="line">event.offsetX 相对容器的水平坐标 </div><div class="line">event.offsetY 相对容器的垂直坐标 </div><div class="line"><span class="built_in">document</span>.documentElement.scrollTop 垂直方向滚动的值 </div><div class="line">event.clientX+<span class="built_in">document</span>.documentElement.scrollTop 相对文档的水平座标+垂直方      向滚动的量</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS-layout/" rel="tag">#CSS layout</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/07/Javascript-作用域链/" rel="next" title="Javascript 作用域链 和 闭包">
+                <i class="fa fa-chevron-left"></i> Javascript 作用域链 和 闭包
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/08/手机端页面自适应解决方案—rem布局/" rel="prev" title="(转)手机端页面自适应解决方案—rem布局">
+                (转)手机端页面自适应解决方案—rem布局 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/08/如何让页面适配各种机型/"
+           data-title="如何让页面适配各种机型" data-url="http://yoursite.com/2016/11/08/如何让页面适配各种机型/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="TonyLi-hc" />
+          <p class="site-author-name" itemprop="name">TonyLi-hc</p>
+          <p class="site-description motion-element" itemprop="description">学习总结|思考感悟|知识管理</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tonylihc" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/TonyLi-hc" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://facebook.github.io/react/docs/hello-world.html" title="React" target="_blank">React</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://react-china.org/" title="react-china" target="_blank">react-china</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://ant.design/docs/spec/introduce" title="antd" target="_blank">antd</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/wordpress/" title="zhangxinxu" target="_blank">zhangxinxu</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zcfy.cc/" title="zcfy" target="_blank">zcfy</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ruanyifeng.com/blog/" title="ruanyifeng" target="_blank">ruanyifeng</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何让页面适配各种机型"><span class="nav-number">1.</span> <span class="nav-text">如何让页面适配各种机型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#大杀器rem"><span class="nav-number">1.1.</span> <span class="nav-text">大杀器rem</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TonyLi-hc</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"TonyLi-hc"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/js/src/particle.js"></script>
+</body>
+
+</html>
