@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Javascript Design-Pattern" />
+  <meta name="keywords" content="Javascript" />
 
 
 
@@ -85,22 +85,19 @@
 
 
 
-<meta name="description" content="设计模式之建造者模式介绍
-在软件系统中，有时候面临着 一个复杂对象，其通常由各个部分的子对象用一定的算法构成；由于需求的变化，这个复杂对象的各个部分经常面临着剧烈的变化，但是将它们组合在一起的算法确相对稳定。如何应对这种变化？如何提供一种 封装机制 来隔离出 复杂对象的各个部分 的变化，从而保持系统中的 稳定构建算法 不随着需求改变而改变 ？ 这就是要说的建造者模式。
-建造者模式可以将一个复杂对象">
+<meta name="description" content="你真的会用console吗？显示信息的命令1234console.log(&apos;hello&apos;);console.info(&apos;信息&apos;);console.error(&apos;错误&apos;);console.warn(&apos;警告&apos;);
+最常用的就是console.log了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式-建造者模式">
-<meta property="og:url" content="http://yoursite.com/2016/11/06/设计模式之建造者模式/index.html">
+<meta property="og:title" content="你真的会用console吗？">
+<meta property="og:url" content="http://yoursite.com/2016/11/13/你真的会用console吗/index.html">
 <meta property="og:site_name" content="纯粹的技术和生活记录">
-<meta property="og:description" content="设计模式之建造者模式介绍
-在软件系统中，有时候面临着 一个复杂对象，其通常由各个部分的子对象用一定的算法构成；由于需求的变化，这个复杂对象的各个部分经常面临着剧烈的变化，但是将它们组合在一起的算法确相对稳定。如何应对这种变化？如何提供一种 封装机制 来隔离出 复杂对象的各个部分 的变化，从而保持系统中的 稳定构建算法 不随着需求改变而改变 ？ 这就是要说的建造者模式。
-建造者模式可以将一个复杂对象">
-<meta property="og:updated_time" content="2016-11-06T02:24:39.635Z">
+<meta property="og:description" content="你真的会用console吗？显示信息的命令1234console.log(&apos;hello&apos;);console.info(&apos;信息&apos;);console.error(&apos;错误&apos;);console.warn(&apos;警告&apos;);
+最常用的就是console.log了">
+<meta property="og:updated_time" content="2016-11-13T02:30:50.765Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式-建造者模式">
-<meta name="twitter:description" content="设计模式之建造者模式介绍
-在软件系统中，有时候面临着 一个复杂对象，其通常由各个部分的子对象用一定的算法构成；由于需求的变化，这个复杂对象的各个部分经常面临着剧烈的变化，但是将它们组合在一起的算法确相对稳定。如何应对这种变化？如何提供一种 封装机制 来隔离出 复杂对象的各个部分 的变化，从而保持系统中的 稳定构建算法 不随着需求改变而改变 ？ 这就是要说的建造者模式。
-建造者模式可以将一个复杂对象">
+<meta name="twitter:title" content="你真的会用console吗？">
+<meta name="twitter:description" content="你真的会用console吗？显示信息的命令1234console.log(&apos;hello&apos;);console.info(&apos;信息&apos;);console.error(&apos;错误&apos;);console.warn(&apos;警告&apos;);
+最常用的就是console.log了">
 
 
 
@@ -121,10 +118,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/11/06/设计模式之建造者模式/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/13/你真的会用console吗/"/>
 
 
-  <title> 设计模式-建造者模式 | 纯粹的技术和生活记录 </title>
+  <title> 你真的会用console吗？ | 纯粹的技术和生活记录 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -254,7 +251,7 @@
             
             
               
-                设计模式-建造者模式
+                你真的会用console吗？
               
             
           </h1>
@@ -266,8 +263,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-06T10:20:31+08:00" content="2016-11-06">
-              2016-11-06
+            <time itemprop="dateCreated" datetime="2016-11-13T11:10:08+08:00" content="2016-11-13">
+              2016-11-13
             </time>
           </span>
 
@@ -280,8 +277,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Design-Pattern/" itemprop="url" rel="index">
-                    <span itemprop="name">Design-Pattern</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -296,8 +293,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/06/设计模式之建造者模式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/06/设计模式之建造者模式/" itemprop="commentsCount"></span>
+                <a href="/2016/11/13/你真的会用console吗/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/13/你真的会用console吗/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -320,20 +317,24 @@
       
 
       
-        <h3 id="设计模式之建造者模式"><a href="#设计模式之建造者模式" class="headerlink" title="设计模式之建造者模式"></a>设计模式之建造者模式</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><blockquote>
-<p>在软件系统中，有时候面临着 <code>一个复杂对象</code>，其通常由各个部分的子对象用一定的算法构成；由于需求的变化，这个复杂对象的各个部分经常面临着剧烈的变化，但是将它们组合在一起的算法确相对稳定。如何应对这种变化？如何提供一种 <code>封装机制</code> 来隔离出 <code>复杂对象的各个部分</code> 的变化，从而保持系统中的 <code>稳定构建算法</code> 不随着需求改变而改变 ？ 这就是要说的建造者模式。</p>
-<p>建造者模式可以将一个复杂对象的构建与其表示相分离，使得同样的构建过程可以创建不同的表示。也就是说如果我们用了建造者模式，那么用户就需要指定需要建造的类型就可以得到它们，而具体建造的过程和细节就不需要知道了。</p>
-</blockquote>
+        <h3 id="你真的会用console吗？"><a href="#你真的会用console吗？" class="headerlink" title="你真的会用console吗？"></a>你真的会用console吗？</h3><h4 id="显示信息的命令"><a href="#显示信息的命令" class="headerlink" title="显示信息的命令"></a>显示信息的命令</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'hello'</span>);</div><div class="line"><span class="built_in">console</span>.info(<span class="string">'信息'</span>);</div><div class="line"><span class="built_in">console</span>.error(<span class="string">'错误'</span>);</div><div class="line"><span class="built_in">console</span>.warn(<span class="string">'警告'</span>);</div></pre></td></tr></table></figure>
+<p>最常用的就是console.log了</p>
 <a id="more"></a>
-<h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><blockquote>
-<p>这个模式相对来说比较简单，先上代码， no bullshit</p>
+<h4 id="占位符"><a href="#占位符" class="headerlink" title="占位符"></a>占位符</h4><p>console 上述的集中度支持 printf 的占位符格式，支持的占位符有：字符（%s）、整数（%d 或 %i）、浮点数（%f）和对象（%o）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">"%d年%d月%d日"</span>,<span class="number">2016</span>,<span class="number">11</span>,<span class="number">8</span>); <span class="comment">// 2016年11月8日</span></div></pre></td></tr></table></figure></p>
+<h4 id="信息分组"><a href="#信息分组" class="headerlink" title="信息分组"></a>信息分组</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.group(<span class="string">"第一组信息"</span>);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"第一组第一条: my blog(tonylihc.github.io)"</span>);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"第一组第二条: a web Front Developer! "</span>);</div><div class="line"><span class="built_in">console</span>.groupEnd();</div><div class="line"><span class="built_in">console</span>.group(<span class="string">"第二组信息"</span>);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"第二组第一条: React 生态真的太厉害了！"</span>);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"第二组第二条: 欢迎你来入坑 :) ! "</span>);</div><div class="line"><span class="built_in">console</span>.groupEnd();</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="string">``</span><span class="string">`</span></div><div class="line">#### 查看对象的信息</div><div class="line"></div><div class="line">console.dir() 可以显示一个对象所有的属性和方法。</div><div class="line"></div><div class="line">`<span class="string">``</span>javascript</div><div class="line"><span class="keyword">var</span> info = &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">"TonyLi_hc"</span>,</div><div class="line">    <span class="attr">blog</span>:<span class="string">"http://tonylihc.github.io"</span>,</div><div class="line">    <span class="attr">message</span>:<span class="string">"happy coding!"</span></div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.dir(info);</div></pre></td></tr></table></figure>
+<h4 id="显示某个节点的内容"><a href="#显示某个节点的内容" class="headerlink" title="显示某个节点的内容"></a>显示某个节点的内容</h4><p>console.dirxml()用来显示网页的某个节点（node）所包含的 html/xml 代码。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div id="info"&gt;</div><div class="line">    &lt;h3&gt;hello, this is good&lt;/h3&gt;</div><div class="line">    &lt;p&gt;欢迎你的加入 FE 大家庭！&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">var info = document.getElementById('info');</div><div class="line">console.dirxml(info);</div></pre></td></tr></table></figure>
+<h4 id="判断变量是否是真"><a href="#判断变量是否是真" class="headerlink" title="判断变量是否是真"></a>判断变量是否是真</h4><p>console.assert() 用来判断一个表达式或变量是否为真。如果结果为否，则在控制台输出一条相应信息，并且抛出一个异常。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = <span class="number">1</span>;</div><div class="line"><span class="built_in">console</span>.assert( result );</div><div class="line"><span class="keyword">var</span> year = <span class="number">2014</span>;</div><div class="line"><span class="built_in">console</span>.assert(year == <span class="number">2018</span> );</div></pre></td></tr></table></figure>
+<p>1 是 非0值，是真；而第二个判断是假，在控制台显示错误信息</p>
+<h4 id="追踪函数的调用轨迹。"><a href="#追踪函数的调用轨迹。" class="headerlink" title="追踪函数的调用轨迹。"></a>追踪函数的调用轨迹。</h4><p>console.trace()用来追踪函数的调用轨迹。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function add(a,b)&#123;</div><div class="line">    console.trace();</div><div class="line">    return a+b;</div><div class="line"> &#125;</div><div class="line">var x = add3(1,1);</div><div class="line">function add3(a,b)&#123;return add2(a,b);&#125;</div><div class="line">function add2(a,b)&#123;return add1(a,b);&#125;</div><div class="line">function add1(a,b)&#123;return add(a,b);&#125;</div></pre></td></tr></table></figure>
+<h4 id="计时功能"><a href="#计时功能" class="headerlink" title="计时功能"></a>计时功能</h4><p>console.time() 和 console.timeEnd()，用来显示代码的运行时间。</p>
+<h4 id="console-profile-的性能分析"><a href="#console-profile-的性能分析" class="headerlink" title="console.profile() 的性能分析"></a>console.profile() 的性能分析</h4><p>性能分析（Profiler）就是分析程序各个部分的运行时间，找出瓶颈所在，使用的方法是console.profile()。</p>
+<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><blockquote>
+<p>强烈建议大家去 控制台里面 试试！</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getBeerById</span>(<span class="params">id, callback</span>) </span>&#123;</div><div class="line">    <span class="comment">// 使用ID来请求数据，然后返回数据.</span></div><div class="line">    asyncRequest(<span class="string">'GET'</span>, <span class="string">'beer.uri?id='</span> + id, <span class="function"><span class="keyword">function</span> (<span class="params">resp</span>) </span>&#123;</div><div class="line">        <span class="comment">// callback 调用 response</span></div><div class="line">        callback(resp.responseText);</div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> el = <span class="built_in">document</span>.querySelector(<span class="string">'#test'</span>);</div><div class="line"><span class="comment">// 注册事件监听</span></div><div class="line">el.addEventListener(<span class="string">'click'</span>, getBeerByIdBridge, <span class="literal">false</span>);</div><div class="line"><span class="comment">// 事件监听回调函数 调用 数据请求方法</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getBeerByIdBridge</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    getBeerById(<span class="keyword">this</span>.id, <span class="function"><span class="keyword">function</span> (<span class="params">beer</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Requested Beer: '</span> + beer);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>根据建造者的定义，<code>表相</code> 即是回调，也就是说获取数据以后如何显示和处理取决于回调函数，相应地回调函数在处理数据的时候不需要关注是如何获取数据的，同样的例子也可以在 <code>jquery</code> 的 <code>ajax</code> 方法里看到，有很多回调函数（比如 <code>success</code>, <code>error</code> 回调等），主要目的就是<code>职责分离</code>。</p>
-<p>同样再来一个 jQuery 的例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'&lt;div class= "foo"&gt; bar &lt;/div&gt;'</span>);</div></pre></td></tr></table></figure>
-<p>我们只需要传入要生成的HTML字符，而不需要关系具体的HTML对象是如何生产的。</p>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>建造者模式主要用于 <code>分步骤构建一个复杂的对象</code> ，在这其中 <code>分步骤</code> 是一个 稳定的算法，而复杂对象的各个部分则经常变化，其优点是： 建造者模式的 <code>加工工艺</code> 是暴露的，这样使得建造者模式更加灵活，并且建造者模式解耦了组装过程和创建具体部件，使得我们不用去关心每个部件是如何组装的。</p>
 
       
     </div>
@@ -356,9 +357,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javscript/" rel="tag">#javscript</a>
-          
-            <a href="/tags/DesignPattern/" rel="tag">#DesignPattern</a>
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
           
         </div>
       
@@ -367,17 +366,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/05/DesignPattern-构造函数模式/" rel="next" title="DesignPattern-构造函数模式">
-                <i class="fa fa-chevron-left"></i> DesignPattern-构造函数模式
+              <a href="/2016/11/10/工厂模式/" rel="next" title="设计模式-工厂模式">
+                <i class="fa fa-chevron-left"></i> 设计模式-工厂模式
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/07/Javascript-作用域链/" rel="prev" title="Javascript 作用域链 和 闭包">
-                Javascript 作用域链 和 闭包 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -403,8 +398,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/06/设计模式之建造者模式/"
-           data-title="设计模式-建造者模式" data-url="http://yoursite.com/2016/11/06/设计模式之建造者模式/">
+      <div class="ds-thread" data-thread-key="2016/11/13/你真的会用console吗/"
+           data-title="你真的会用console吗？" data-url="http://yoursite.com/2016/11/13/你真的会用console吗/">
       </div>
     
   </div>
@@ -549,7 +544,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#设计模式之建造者模式"><span class="nav-number">1.</span> <span class="nav-text">设计模式之建造者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍"><span class="nav-number">1.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正文"><span class="nav-number">1.2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">1.3.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#你真的会用console吗？"><span class="nav-number">1.</span> <span class="nav-text">你真的会用console吗？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#显示信息的命令"><span class="nav-number">1.1.</span> <span class="nav-text">显示信息的命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#占位符"><span class="nav-number">1.2.</span> <span class="nav-text">占位符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信息分组"><span class="nav-number">1.3.</span> <span class="nav-text">信息分组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示某个节点的内容"><span class="nav-number">1.4.</span> <span class="nav-text">显示某个节点的内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断变量是否是真"><span class="nav-number">1.5.</span> <span class="nav-text">判断变量是否是真</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#追踪函数的调用轨迹。"><span class="nav-number">1.6.</span> <span class="nav-text">追踪函数的调用轨迹。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计时功能"><span class="nav-number">1.7.</span> <span class="nav-text">计时功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#console-profile-的性能分析"><span class="nav-number">1.8.</span> <span class="nav-text">console.profile() 的性能分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最后"><span class="nav-number">1.9.</span> <span class="nav-text">最后</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
