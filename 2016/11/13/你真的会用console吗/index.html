@@ -85,19 +85,19 @@
 
 
 
-<meta name="description" content="你真的会用console吗？显示信息的命令1234console.log(&apos;hello&apos;);console.info(&apos;信息&apos;);console.error(&apos;错误&apos;);console.warn(&apos;警告&apos;);
-最常用的就是console.log了">
+<meta name="description" content="你真的会用console吗？
+大家在调试页面的时候每次都要输入console.log()这么多字母会不会很烦，教大家一个很简单的方法。可以在 js 文件的顶部加上下面这行代码var l = console.log.bind(console);在控制台输出的时候就可以直接这样输出：12345678l();eg: &amp;gt;var l = console.log.bing(console);l(&amp;quo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="你真的会用console吗？">
 <meta property="og:url" content="http://yoursite.com/2016/11/13/你真的会用console吗/index.html">
 <meta property="og:site_name" content="纯粹的技术和生活记录">
-<meta property="og:description" content="你真的会用console吗？显示信息的命令1234console.log(&apos;hello&apos;);console.info(&apos;信息&apos;);console.error(&apos;错误&apos;);console.warn(&apos;警告&apos;);
-最常用的就是console.log了">
-<meta property="og:updated_time" content="2016-11-13T02:30:50.765Z">
+<meta property="og:description" content="你真的会用console吗？
+大家在调试页面的时候每次都要输入console.log()这么多字母会不会很烦，教大家一个很简单的方法。可以在 js 文件的顶部加上下面这行代码var l = console.log.bind(console);在控制台输出的时候就可以直接这样输出：12345678l();eg: &amp;gt;var l = console.log.bing(console);l(&amp;quo">
+<meta property="og:updated_time" content="2016-11-23T11:13:16.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="你真的会用console吗？">
-<meta name="twitter:description" content="你真的会用console吗？显示信息的命令1234console.log(&apos;hello&apos;);console.info(&apos;信息&apos;);console.error(&apos;错误&apos;);console.warn(&apos;警告&apos;);
-最常用的就是console.log了">
+<meta name="twitter:description" content="你真的会用console吗？
+大家在调试页面的时候每次都要输入console.log()这么多字母会不会很烦，教大家一个很简单的方法。可以在 js 文件的顶部加上下面这行代码var l = console.log.bind(console);在控制台输出的时候就可以直接这样输出：12345678l();eg: &amp;gt;var l = console.log.bing(console);l(&amp;quo">
 
 
 
@@ -317,7 +317,11 @@
       
 
       
-        <h3 id="你真的会用console吗？"><a href="#你真的会用console吗？" class="headerlink" title="你真的会用console吗？"></a>你真的会用console吗？</h3><h4 id="显示信息的命令"><a href="#显示信息的命令" class="headerlink" title="显示信息的命令"></a>显示信息的命令</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'hello'</span>);</div><div class="line"><span class="built_in">console</span>.info(<span class="string">'信息'</span>);</div><div class="line"><span class="built_in">console</span>.error(<span class="string">'错误'</span>);</div><div class="line"><span class="built_in">console</span>.warn(<span class="string">'警告'</span>);</div></pre></td></tr></table></figure>
+        <h3 id="你真的会用console吗？"><a href="#你真的会用console吗？" class="headerlink" title="你真的会用console吗？"></a>你真的会用console吗？</h3><blockquote>
+<p>大家在调试页面的时候每次都要输入console.log()这么多字母会不会很烦，教大家一个很简单的方法。<br>可以在 <code>js</code> 文件的顶部加上下面这行代码<br><code>var l = console.log.bind(console);</code><br>在控制台输出的时候就可以直接这样输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">l();</div><div class="line">eg: &gt;</div><div class="line">var l = console.log.bing(console);</div><div class="line">l(&quot;lest&quot;);</div><div class="line">l(1111);</div><div class="line">---&gt;</div><div class="line">test</div><div class="line">1111</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>开发完后删掉这行代码和l();代码就可以了。</p>
+<h4 id="显示信息的命令"><a href="#显示信息的命令" class="headerlink" title="显示信息的命令"></a>显示信息的命令</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'hello'</span>);</div><div class="line"><span class="built_in">console</span>.info(<span class="string">'信息'</span>);</div><div class="line"><span class="built_in">console</span>.error(<span class="string">'错误'</span>);</div><div class="line"><span class="built_in">console</span>.warn(<span class="string">'警告'</span>);</div></pre></td></tr></table></figure>
 <p>最常用的就是console.log了</p>
 <a id="more"></a>
 <h4 id="占位符"><a href="#占位符" class="headerlink" title="占位符"></a>占位符</h4><p>console 上述的集中度支持 printf 的占位符格式，支持的占位符有：字符（%s）、整数（%d 或 %i）、浮点数（%f）和对象（%o）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">"%d年%d月%d日"</span>,<span class="number">2016</span>,<span class="number">11</span>,<span class="number">8</span>); <span class="comment">// 2016年11月8日</span></div></pre></td></tr></table></figure></p>
@@ -448,7 +452,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">23</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -465,7 +469,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
